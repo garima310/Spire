@@ -15,20 +15,32 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const [jobs, setJobs] = useState([
-    {
-      title: "Frontend Developer",
-      company: "GameDev Co.",
-      location: "Remote",
-      description: "Build cool UIs with React and Tailwind.",
-    },
-    {
-      title: "Lore Writer",
-      company: "Vellichor Interactive",
-      location: "Bangalore",
-      description: "Craft immersive narratives for our games.",
-    },
-  ]);
+  const jobs = [
+  {
+    title: "Narrative Designer",
+    company: "Riot Games",
+    location: "Remote",
+    description: "Help build immersive narratives for next-gen story-driven games.",
+    type: "Full-Time",
+    logo: "https://upload.wikimedia.org/wikipedia/en/7/7b/Riot_Games_logo_2022.svg"
+  },
+  {
+    title: "3D Artist",
+    company: "Ubisoft",
+    location: "Montreal, Canada",
+    description: "Create jaw-dropping 3D assets for AAA open-world environments.",
+    type: "Contract",
+    logo: ""
+  },
+  {
+    title: "Gameplay Programmer",
+    company: "CD Projekt Red",
+    location: "Poland / Remote",
+    description: "Work with RedEngine to bring mechanics to life in RPG worlds.",
+    type: "Full-Time"
+  }
+];
+
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
