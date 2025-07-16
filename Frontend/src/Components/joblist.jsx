@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import jobs from "../data/jobData"; // <- import the list
 
 const JobList = () => {
+  const [jobs, setJobs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("All");
   const [selectedStudio, setSelectedStudio] = useState("All");
-  const [visibleCount, setVisibleCount] = useState(6); // Initial jobs to show
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/jobs")
+      .then((res) => res.json())
+      .then((data) => setJobs(data))
+      .catch((err) => console.error("Error fetching jobs:", err));
+  }, []);
 
   const studios = ["All", ...new Set(jobs.map((job) => job.company))];
   const types = ["All", ...new Set(jobs.map((job) => job.type))];
@@ -66,6 +73,16 @@ const JobList = () => {
 
       {/* Jobs List */}
       <section className="lg:col-span-3 flex flex-col items-center gap-10">
+        <div className="flex justify-center w-full mb-4">
+          <input
+            type="text"
+            placeholder="Search jobs by title..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="px-4 py-2 w-80 rounded-full border border-cyan-300 text-black"
+          />
+        </div>
+
         <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3 w-full">
           {visibleJobs.length > 0 ? (
             visibleJobs.map((job, index) => (
@@ -73,7 +90,6 @@ const JobList = () => {
                 key={index}
                 className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-md shadow-xl hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Job Card */}
                 <div className="flex items-center gap-4 mb-4">
                   <img
                     src={
@@ -111,6 +127,17 @@ const JobList = () => {
                     Apply Now
                   </button>
                 </Link>
+                 {/* Company Website Link */}
+  {job.website && (
+    <a
+      href={job.website}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-2 text-xs text-cyan-300 underline hover:text-cyan-200 text-center"
+    >
+      Visit Company Site
+    </a>
+  )}
               </div>
             ))
           ) : (
@@ -120,7 +147,6 @@ const JobList = () => {
           )}
         </div>
 
-        {/* Load More Button */}
         {visibleCount < filteredJobs.length && (
           <button
             onClick={() => setVisibleCount((prev) => prev + 6)}

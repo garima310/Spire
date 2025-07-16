@@ -7,11 +7,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// routes
+// Import routes
 const authRoutes = require("./routes/authRoutes");
-app.use("/", authRoutes);
+const jobRoutes = require("./routes/jobRoutes");
 
-// connect DB
+// Use routes with proper prefixes
+app.use("/api/auth", authRoutes);  
+app.use("/api", jobRoutes);
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {

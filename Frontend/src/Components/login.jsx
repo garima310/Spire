@@ -4,15 +4,36 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setIsLoggedIn(true);
-    navigate("/");
+
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsLoggedIn(true);
+        navigate("/");
+      } else {
+        alert(data.message || "Login failed!");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("Something went wrong!");
+    }
   };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] px-4 overflow-hidden">
-      {/* Background glows */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-400/20 rounded-full blur-[100px] animate-pulse -z-10" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-pink-400/20 rounded-full blur-[100px] animate-ping -z-10" />
 
@@ -27,12 +48,14 @@ const Login = ({ setIsLoggedIn }) => {
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <input
             type="email"
+            name="email"
             placeholder="Email"
             className="p-3 border border-white/20 rounded-xl bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
             required
           />
           <input
             type="password"
+            name="password"
             placeholder="Password"
             className="p-3 border border-white/20 rounded-xl bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
             required
@@ -46,7 +69,7 @@ const Login = ({ setIsLoggedIn }) => {
         </form>
 
         <p className="text-sm text-center mt-4 text-gray-300">
-          Don’t have an account?{' '}
+          Don’t have an account?{" "}
           <Link to="/signup" className="text-cyan-300 font-medium hover:underline">
             Sign up
           </Link>

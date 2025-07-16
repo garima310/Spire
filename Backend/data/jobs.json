@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "title": "Narrative Designer",
+    "company": "Riot Games",
+    "location": "Los Angeles, CA / Remote",
+    "type": "Full-Time",
+    "description": "Craft immersive storylines and character arcs for AAA titles. Collaborate closely with game designers to weave narrative into gameplay.",
+    "posted": "3 days ago",
+    "salary": "$90,000 - $110,000 / yr",
+    "website": "https://www.riotgames.com/en/work-with-us"
+  },
+  {
+    "id": 2,
+    "title": "3D Environment Artist",
+    "company": "Ubisoft",
+    "location": "Montreal, Canada",
+    "type": "Contract",
+    "description": "Create stunning 3D environments for open-world exploration. Work with level designers to bring immersive worlds to life.",
+    "posted": "5 days ago",
+    "salary": "$70,000 - $85,000 / yr",
+    "website": "https://www.ubisoft.com/en-us/company/careers"
+  },
+  {
+    "id": 3,
+    "title": "Gameplay Programmer",
+    "company": "CD Projekt Red",
+    "location": "Warsaw, Poland / Remote",
+    "type": "Full-Time",
+    "description": "Develop complex gameplay systems with RedEngine. Work with cross-functional teams on next-gen RPG mechanics.",
+    "posted": "1 week ago",
+    "salary": "$80,000 - $100,000 / yr",
+    "website": "https://en.cdprojektred.com/jobs/"
+  },
+  {
+    "id": 4,
+    "title": "VFX Artist",
+    "company": "Insomniac Games",
+    "location": "California, USA",
+    "type": "Remote",
+    "description": "Design next-gen visual effects for action-packed gameplay. Work with animation and art teams on stunning visuals.",
+    "posted": "2 days ago",
+    "salary": "$85,000 - $105,000 / yr",
+    "website": "https://insomniac.games/careers/"
+  },
+  {
+    "id": 5,
+    "title": "UI/UX Designer",
+    "company": "Valve",
+    "location": "Seattle, WA",
+    "type": "Full-Time",
+    "description": "Craft seamless and intuitive UI experiences for competitive multiplayer games. Collaborate with dev and design teams.",
+    "posted": "4 days ago",
+    "salary": "$95,000 - $115,000 / yr",
+    "website": "https://www.valvesoftware.com/en/jobs"
+  },
+  {
+    "id": 6,
+    "title": "Lore Specialist",
+    "company": "CD Projekt Red",
+    "location": "Remote",
+    "type": "Contract",
+    "description": "Build deep world lore and mythology for upcoming RPGs. Collaborate with writers and quest designers.",
+    "posted": "6 days ago",
+    "salary": "$60,000 - $80,000 / yr",
+    "website": "https://en.cdprojektred.com/jobs/"
+  },
+  {
+    "id": 7,
+    "title": "Questline Writer",
+    "company": "Riot Games",
+    "location": "Remote",
+    "type": "Remote",
+    "description": "Craft gripping questlines packed with choice, consequence, and unforgettable moments. Work with designers and artists to bring player-driven narratives to life in the Riot universe.",
+    "website": "https://www.riotgames.com"
+  },
+  {
+    "id": 8,
+    "title": "Narrative Designer - Open World",
+    "company": "Ubisoft",
+    "location": "On-Site - Montreal, Canada",
+    "type": "On-Site",
+    "description": "Design rich story arcs, side missions, and immersive world lore for expansive open-world adventures. Help shape the emotional heartbeat of Ubisoft’s next blockbuster.",
+    "website": "https://www.ubisoft.com"
+  },
+  {
+    "id": 9,
+    "title": "Dialogue Specialist",
+    "company": "CD Projekt Red",
+    "location": "Hybrid - Warsaw, Poland",
+    "type": "Hybrid",
+    "description": "Write natural, impactful dialogues for characters across multiple storylines. Join the team behind iconic RPGs and redefine what engaging conversations feel like in games.",
+    "website": "https://www.cdprojektred.com"
+  },
+  {
+    "id": 10,
+    "title": "Narrative Systems Designer",
+    "company": "Larian Studios",
+    "location": "Remote",
+    "type": "Remote",
+    "description": "Invent dynamic storytelling systems where player choices ripple across the game world. Collaborate with cross-disciplinary teams to push the boundaries of interactive storytelling.",
+    "website": "https://www.larian.com"
+  },
+  {
+    "id": 11,
+    "title": "Worldbuilding Lead",
+    "company": "FromSoftware",
+    "location": "On-Site - Tokyo, Japan",
+    "type": "On-Site",
+    "description": "Shape haunting, intricate worlds that ooze with mystery. Lead the lore development and environmental storytelling for the next soul-crushingly beautiful game from FromSoftware.",
+    "website": "https://www.fromsoftware.jp"
+  },
+  {
+    "id": 12,
+    "title": "Character Backstory Writer",
+    "company": "Supergiant Games",
+    "location": "Remote",
+    "type": "Remote",
+    "description": "Develop layered, emotionally gripping backstories for iconic characters. Join the minds behind Hades and craft narratives that resonate beyond the game screen.",
+    "website": "https://www.supergiantgames.com"
+  },
+  {
+    "id": 13,
+    "title": "Interactive Dialogue Writer",
+    "company": "Dontnod Entertainment",
+    "location": "Hybrid - Paris, France",
+    "type": "Hybrid",
+    "description": "Write branching dialogues that feel raw, real, and player-driven. Bring life to emotionally intense moments in narrative-heavy adventure games.",
+    "website": "https://www.dont-nod.com"
+  },
+  {
+    "id": 14,
+    "title": "Narrative Director",
+    "company": "Obsidian Entertainment",
+    "location": "On-Site - California, USA",
+    "type": "On-Site",
+    "description": "Lead narrative vision for AAA RPG titles. Guide writers, collaborate with designers, and make choices that impact millions of players worldwide.",
+    "website": "https://www.obsidian.net"
+  },
+  {
+    "id": 15,
+    "title": "Lore Curator",
+    "company": "IndieQuest Studios",
+    "location": "Remote",
+    "type": "Remote",
+    "description": "Dive deep into indie game worlds and weave interconnected lore that fuels curiosity. Build communities that obsess over every story thread.",
+    "website": "https://www.indiequeststudios.com"
+  },
+  {
+    "id": 16,
+    "title": "Visual Story Artist",
+    "company": "Night School Studio",
+    "location": "Hybrid - Los Angeles, USA",
+    "type": "Hybrid",
+    "description": "Translate narrative beats into stunning visual storyboards. Craft the visual heartbeat of interactive storytelling experiences like Oxenfree and Afterparty.",
+    "website": "https://nightschoolstudio.com"
+  },
+  {
+    "id": 17,
+    "title": "Dialogue Systems Engineer",
+    "company": "Epic Games",
+    "location": "Remote",
+    "type": "Remote",
+    "description": "Build robust dialogue systems that empower writers to create dynamic, player-driven conversations. Join the Unreal Engine team and redefine interactive storytelling.",
+    "website": "https://www.epicgames.com"
+  }
+]

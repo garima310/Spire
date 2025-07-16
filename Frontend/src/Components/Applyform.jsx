@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import Confetti from "react-confetti";
 
 const ApplyForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    resume: "",
+    role: "",
+    portfolio: "",
+    linkedin: "",
+    resumeLink: "",
+    coverLetter: "",
   });
 
   const [applied, setApplied] = useState(false);
@@ -19,53 +24,93 @@ const ApplyForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] text-[#e2e8f0] px-4">
-      <div className="bg-[#1a1a1a] p-10 rounded-2xl shadow-xl max-w-md w-full">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] px-4 text-white relative">
+      {applied && <Confetti numberOfPieces={150} recycle={false} />}
+      
+      <div className="bg-white/5 backdrop-blur-md p-10 rounded-2xl shadow-lg border border-white/10 max-w-xl w-full animate-fade-in">
         {!applied ? (
           <>
-            <h2 className="text-3xl font-bold text-center text-[#6ee7b7] mb-6">
-              Apply for this Job
+            <h2 className="text-3xl font-bold text-center text-cyan-400 mb-6">
+              Apply for Your Dream Job
             </h2>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Full Name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="p-3 rounded-md bg-[#0e0e0e] border border-[#2c2c2c] text-white placeholder-gray-400 focus:ring-2 focus:ring-[#10b981]"
+                className="p-3 rounded-md bg-[#0e0e0e] border border-[#333] text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400"
               />
               <input
                 type="email"
                 name="email"
-                placeholder="Your Email"
+                placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="p-3 rounded-md bg-[#0e0e0e] border border-[#2c2c2c] text-white placeholder-gray-400 focus:ring-2 focus:ring-[#10b981]"
+                className="p-3 rounded-md bg-[#0e0e0e] border border-[#333] text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400"
               />
               <input
                 type="text"
-                name="resume"
-                placeholder="Paste Resume Link"
-                value={formData.resume}
+                name="role"
+                placeholder="Role Applying For (e.g. Game Writer)"
+                value={formData.role}
                 onChange={handleChange}
                 required
-                className="p-3 rounded-md bg-[#0e0e0e] border border-[#2c2c2c] text-white placeholder-gray-400 focus:ring-2 focus:ring-[#10b981]"
+                className="p-3 rounded-md bg-[#0e0e0e] border border-[#333] text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400"
+              />
+              <input
+                type="url"
+                name="portfolio"
+                placeholder="Portfolio URL (optional)"
+                value={formData.portfolio}
+                onChange={handleChange}
+                className="p-3 rounded-md bg-[#0e0e0e] border border-[#333] text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400"
+              />
+              <input
+                type="url"
+                name="linkedin"
+                placeholder="LinkedIn Profile"
+                value={formData.linkedin}
+                onChange={handleChange}
+                className="p-3 rounded-md bg-[#0e0e0e] border border-[#333] text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400"
+              />
+              <input
+                type="url"
+                name="resumeLink"
+                placeholder="Resume Drive/Link"
+                value={formData.resumeLink}
+                onChange={handleChange}
+                required
+                className="p-3 rounded-md bg-[#0e0e0e] border border-[#333] text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400"
+              />
+              <textarea
+                name="coverLetter"
+                placeholder="Short Cover Letter"
+                value={formData.coverLetter}
+                onChange={handleChange}
+                rows={4}
+                className="p-3 rounded-md bg-[#0e0e0e] border border-[#333] text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400"
               />
               <button
                 type="submit"
-                className="bg-[#10b981] text-white py-2 rounded-md hover:bg-[#0f766e] transition-all font-medium"
+                className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-md font-semibold text-white hover:opacity-90 transition-all"
               >
-                Apply Now
+                Submit Application
               </button>
             </form>
           </>
         ) : (
-          <h3 className="text-xl text-center text-[#f9c5d1]">
-            Thank you for applying! 🎉
-          </h3>
+          <div className="text-center space-y-4 py-8">
+            <h3 className="text-2xl text-pink-300 font-semibold">
+              Woohoo! 🎉 Application submitted
+            </h3>
+            <p className="text-slate-300">
+              You’ll hear from us if you're the chosen one.
+            </p>
+          </div>
         )}
       </div>
     </div>

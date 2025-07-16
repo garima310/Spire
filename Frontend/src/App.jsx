@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./Components/MainLayout";
 import Login from "./Components/login";
 import Signup from "./Components/Signup";
 import Loader from "./Components/loader";
@@ -52,13 +53,14 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route element={<MainLayout />}>
         <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/post-job" element={<PostJob />} />
-        <Route path="/jobs" element={<JobList jobs={jobs} />} /> 
+        <Route path="/jobs" element={<JobList />} />
         <Route path="/apply" element={<ApplyForm />} />
-        <Route path="*" element={<Home isLoggedIn={isLoggedIn} />} />
+        <Route path="*" element={<Home isLoggedIn={isLoggedIn} />} /> </Route>
       </Routes>
     </Router>
   );

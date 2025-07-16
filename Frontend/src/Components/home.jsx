@@ -33,7 +33,7 @@ const Home = ({ isLoggedIn }) => {
                 Login
               </Link>
               <Link to="/signup">
-                <button className="px-4 py-2 text-sm font-bold rounded bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 transition-all">
+                <button className="px-4 py-2 text-sm font-bold rounded bg-gradient-to-r from-violet-500 to-black-500 text-white hover:opacity-90 transition-all">
                   Join Now
                 </button>
               </Link>
@@ -50,7 +50,7 @@ const Home = ({ isLoggedIn }) => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="flex flex-col items-center justify-center text-center px-6 min-h-[80vh] relative z-10"
+        className="flex flex-col items-center justify-center text-center px-6  min-h-[90vh] relative z-10"
       >
         <h2 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 drop-shadow-xl mb-6 leading-tight animate-fade-in">
           Unlock Your Dream Role <br className="hidden md:block" /> in Creative Tech
@@ -73,30 +73,52 @@ const Home = ({ isLoggedIn }) => {
       </section>
 
       {/* Featured Jobs Section */}
-      <section
-        id="featured-jobs"
-        className="scroll-mt-28 text-center px-6 py-16 bg-[#1e1e2f]/40 backdrop-blur-md relative z-10"
+<section
+  id="featured-jobs"
+  className="scroll-mt-28 text-center px-6 py-16 bg-[#1e1e2f]/40 backdrop-blur-md relative z-10"
+>
+  <h3 className="text-4xl font-bold text-cyan-400 mb-12 drop-shadow-md">
+    Featured Jobs
+  </h3>
+  <div className="flex flex-wrap justify-center gap-10">
+    {[
+      {
+        id: 1,
+        title: "Lead Narrative Designer",
+        company: "Riot Games",
+        description:
+          "Shape groundbreaking stories for AAA titles with one of the most creative teams in the industry.",
+      },
+      {
+        id: 2,
+        title: "Senior Gameplay Programmer",
+        company: "CD Projekt Red",
+        description:
+          "Engineer innovative mechanics for immersive open-world RPGs alongside world-class developers.",
+      },
+      {
+        id: 3,
+        title: "UI/UX Designer — Multiplayer Focus",
+        company: "Valve",
+        description:
+          "Craft intuitive, seamless user experiences for globally renowned competitive games.",
+      },
+    ].map((job) => (
+      <div
+        key={job.id}
+        className="bg-white/5 p-8 rounded-2xl shadow-lg hover:scale-105 transform transition max-w-sm w-full backdrop-blur-lg border border-white/10"
       >
-        <h3 className="text-4xl font-bold text-cyan-400 mb-12 drop-shadow-md">
-          Featured Jobs
-        </h3>
-        <div className="flex flex-wrap justify-center gap-10">
-          {[1, 2, 3].map((job) => (
-            <div
-              key={job}
-              className="bg-white/5 p-8 rounded-2xl shadow-lg hover:scale-105 transform transition max-w-sm w-full backdrop-blur-lg border border-white/10"
-            >
-              <h4 className="text-2xl font-bold text-pink-300 mb-4">Job Title {job}</h4>
-              <p className="text-slate-300 mb-4">
-                Short description of the job role, requirements & company.
-              </p>
-              <Link to="/jobs" className="text-cyan-300 font-semibold hover:underline">
-                View Details →
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
+        <h4 className="text-2xl font-bold text-pink-300 mb-2">{job.title}</h4>
+        <p className="text-slate-300 text-sm mb-1">{job.company}</p>
+        <p className="text-slate-400 text-sm mb-4">{job.description}</p>
+        <Link to="/jobs" className="text-cyan-300 font-semibold hover:underline">
+          View Details →
+        </Link>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* About Section */}
       <section id="about" className="scroll-mt-28 text-center px-6 py-16 relative z-10">
@@ -104,9 +126,10 @@ const Home = ({ isLoggedIn }) => {
           About Spire
         </h3>
         <p className="text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed">
-          Spire is your creative tech job board — connecting visionaries with the coolest roles
-          in gaming, storytelling, and design. Whether you’re hunting for your first gig or scouting top talent,
-          we’re the platform for your next big leap.
+          Spire is a curated job board for the creative tech industry — a space built for storytellers, game devs, designers, and narrative artists.
+We bridge the gap between innovative studios and passionate creatives looking to shape the future of gaming, interactive fiction, and immersive design.
+Whether you're a writer crafting branching narratives, a designer breathing life into virtual worlds, or a studio searching for fresh talent, Spire connects you to opportunities that align with your vision.
+It’s not just about finding a job — it’s about joining a community that values creativity, storytelling, and bold ideas. Your next chapter starts here.
         </p>
       </section>
 
