@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 
 const Signup = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Signup = ({ setIsLoggedIn }) => {
     const password = formData.get("password");
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/signup", {
+      const response = await fetch(`${API_URL}/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),

@@ -9,7 +9,7 @@ const JobList = () => {
   const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/jobs")
+     fetch(`${API_URL}/jobs`)
       .then((res) => res.json())
       .then((data) => setJobs(data))
       .catch((err) => console.error("Error fetching jobs:", err));
