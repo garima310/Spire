@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+app.set("trust proxy", 1); // Trust first proxy for Render
 
 // CORS setup with allowed origins
 app.use(
